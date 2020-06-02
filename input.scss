@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin navButton($size, $side: 'left') {
+  background-color: white;
+  border: none;
+  @if $side == 'right' {
+    border-radius: 0px 40px 40px 0;
+  } @else {
+    border-radius: 40px 0 0 40px;
+  }
+
+  width: $size;
+  height: $size;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 27%;
+  box-shadow: 0px 5px 3px rgba($color: #000000, $alpha: 0.25);
+  transition: box-shadow 0.4s;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    box-shadow: 0px 4px 10px rgba($color: #000000, $alpha: 0.25);
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 350px) {
+  body {
+    background-color: #ffffff;
+    display: flex;
+    margin: 24px auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    height: 697px;
+    background-image: url(./assets/patterns/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 360px 120px;
+    background-position: 0% 100%;
+  }
+  .photo {
+    margin: 0 auto 32px;
+    text-align: center;
+    width: 326.5px;
+    height: 307.5px;
+    background-image: url(./assets/patterns/pattern-bg.svg);
+    background-position: center;
+    background-size: contain;
+
+    &--img {
+      margin-top: 30px;
+      width: 254px;
+      height: 253px;
+      object-fit: contain;
+      border-radius: 7px;
+    }
+
+    &--nav {
+      position: relative;
+      bottom: 25px;
+      left: 124px;
+      display: flex;
+      flex-direction: row;
+      width: 80px;
+      height: 40px;
+
+      &--button {
+        &-next {
+          @include navButton(40px, 'right');
+          background-image: url(./assets/icons/icon-next.svg);
+        }
+        &-prev {
+          @include navButton(40px);
+          background-image: url(./assets/icons/icon-prev.svg);
+        }
+      }
+    }
+  }
+  .desc {
+    margin: 0 auto;
+    background-image: url(./assets/patterns/pattern-quotes.svg);
+    background-position: 41% 0%;
+    background-size: 18%;
+    background-repeat: no-repeat;
+    &--content {
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      width: 311px;
+      height: 228px;
+      &-text {
+        margin-top: 25px;
+        font-size: 18px;
+      }
+      &-name {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0;
+      }
+      &-position {
+        margin: 0;
+        font-size: 15px;
+        color: #b9b9ce;
+      }
+    }
+  }
+  .disabled {
+    cursor: not-allowed;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 auto;
+    width: 1440px;
+    height: 800px;
+    background-image: url(./assets/patterns/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 610px 160px;
+    background-position: 0% 100%;
+  }
+  .photo {
+    padding: 0;
+    margin: 50px 73px auto auto;
+    width: 697px;
+    height: 657px;
+    background-image: url(./assets/patterns/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--img {
+      margin-top: 65px;
+      width: 540px;
+      height: 540px;
+      object-fit: contain;
+    }
+
+    &--nav {
+      position: relative;
+      bottom: 35px;
+      left: 124px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      width: 112px;
+      height: 56px;
+
+      &--button {
+        display: flex;
+        &-next {
+          @include navButton(56px, 'right');
+          background-image: url(./assets/icons/icon-next.svg);
+        }
+        &-prev {
+          @include navButton(56px);
+          background-image: url(./assets/icons/icon-prev.svg);
+        }
+      }
+    }
+  }
+  .desc {
+    z-index: 10;
+    margin: 250px auto auto 0;
+    background-image: url(./assets/patterns/pattern-quotes.svg);
+    background-position: 50% 0%;
+    background-size: 18%;
+    background-repeat: no-repeat;
+    &--content {
+      position: relative;
+      left: 187px;
+      top: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+      width: 632px;
+      height: 350px;
+      &-text {
+        margin-top: 25px;
+        font-size: 32px;
+      }
+      &-name {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+      }
+      &-position {
+        margin: 0 20px;
+        font-size: 20px;
+        color: #b9b9ce;
+      }
+    }
+  }
+}
