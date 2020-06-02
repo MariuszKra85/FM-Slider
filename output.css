@@ -3,7 +3,7 @@
 }
 
 @media (min-width: 350px) {
-  body {
+  main {
     background-color: #ffffff;
     display: flex;
     margin: 24px auto 0;
@@ -118,7 +118,7 @@
   }
 }
 @media (min-width: 1440px) {
-  body {
+  main {
     display: flex;
     flex-direction: row-reverse;
     margin: 0 auto;
