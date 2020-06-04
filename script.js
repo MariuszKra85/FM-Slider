@@ -1,11 +1,3 @@
-let x;
-fetch('test.json')
-  .then((response) => response.json())
-  .then((json) => {
-    x = json;
-    init();
-  });
-
 const person = [
   {
     name: 'Tanya Sinclair',
@@ -22,12 +14,6 @@ const person = [
     I now feel so confident about starting up as a professional developer. ” `,
     position: `Junior Front-end Developer`,
     photo: './assets/img/image-john.jpg',
-  },
-  {
-    name: 'Mariusz Krawczyk',
-    text: ` Cupidatat dolore minim eu in reprehenderit eu. `,
-    position: `Junior Front-end Developer`,
-    photo: './assets/img/image-john2.jpg',
   },
 ];
 
@@ -47,6 +33,7 @@ const addPerson = (personNr) => {
   boxName.textContent = name;
   boxPosition.textContent = position;
   boxPhoto.setAttribute('src', `${photo}`);
+  boxPhoto.setAttribute('alt', `${name}`);
 };
 
 const btnDisabled = (perArrNum, perArrLeng) => {
